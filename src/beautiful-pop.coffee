@@ -2,6 +2,9 @@ global = require './global/global.coffee'
 $ = require './global/jquery.coffee'
 Modernizr = require './global/modernizr.coffee'
 delay = require './util/delay.coffee'
+animationend = require './util/animationend-property'
+transitionend = require './util/transitionend-property'
+
 $el = require './cache/elCache.coffee'
 
 require './template/template.less'
@@ -36,6 +39,7 @@ beautifulPop::setDefaults = (obj) ->
   if !obj
     throw new Error 'must be arg!'
   $.extend beautifulPop.defaults, obj
+  undefined
 
 beautifulPop::alert = (obj, callback) ->
   self = this
@@ -69,7 +73,6 @@ beautifulPop::alert = (obj, callback) ->
     evt.preventDefault()
     self._hide()
     callback(false) if callback
-
   undefined
 
 
@@ -80,14 +83,16 @@ beautifulPop::_show = () ->
   delay ->
     $el.btfpOverlay.addClass('anim')
     $el.btfpPop.show().addClass('show');
+  undefined
 
 beautifulPop::_hide = () ->
   $el.btfpPop.removeClass('show').addClass('hide');
-  $el.btfpPop.one 'animationend', ->
+  $el.btfpPop.one animationend, ->
     $el.btfpPop.hide().removeClass('hide')
-    $el.btfpOverlay.removeClass('anim').one 'transitionend', ->
+    $el.btfpOverlay.removeClass('anim').one transitionend, ->
       $el.btfp.hide()
       $el.btfpCancel.hide()
       $el.btfpConfirm.hide()
+  undefined
 
 global.win.beautifulPop = new beautifulPop
