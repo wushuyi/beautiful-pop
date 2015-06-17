@@ -1,5 +1,9 @@
 (function($){
 	$(document).ready(function (){
-		// your functions go here
+		$('#test').on('click', function(){
+			beautifulPop.alert({
+				title: 'Hello, World!'
+			})
+		});
 	});
 })(window.jQuery);

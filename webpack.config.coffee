@@ -10,7 +10,7 @@ config =
     loaders: [
       {test: /\.coffee$/, loader: "coffee"}
       {test: /\.css$/, loader: "style!css!postcss"}
-      {test: /\.less/, loader: "style!css!less"}
+      {test: /\.less/, loader: "style!css!less!postcss"}
       {test: /\.html$/, name: "mandrillTemplates", loader: 'raw!html-minify'}
       {test: /\.png$/, loader: "url-loader?limit=1000000"}
       {test: /\.jpg$/, loader: "url-loader"}
@@ -24,6 +24,6 @@ config =
       ".html"
       ".less"
     ]
-  postcss: [autoprefixer, csswring]
+  postcss: [autoprefixer]
 
 module.exports = config
