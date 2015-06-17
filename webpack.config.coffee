@@ -2,7 +2,7 @@ autoprefixer = require 'autoprefixer-core'
 csswring = require 'csswring'
 
 config =
-  entry: ['./scr/beautiful-pop.coffee']
+  entry: ['./src/beautiful-pop.coffee']
   output:
     path: './dist'
     filename: 'bundle.js'
