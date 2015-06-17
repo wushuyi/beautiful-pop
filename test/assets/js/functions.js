@@ -1,9 +1,9 @@
 (function($){
 	$(document).ready(function (){
 		beautifulPop.setDefaults({
-			clickEvent: 'tap'
+			clickEvent: 'click tap'
 		});
-		$('#test').on('tap', function(){
+		$('#test').on('click tap', function(){
 			beautifulPop.alert({
 				title: 'Hello, World!'
 			})

@@ -1,5 +1,6 @@
 global = require './global/global.coffee'
 $ = require './global/jquery.coffee'
+#$ = require '../test/assets/libs/jquery/2.1.4/jquery'
 Modernizr = require './global/modernizr.coffee'
 delay = require './util/delay.coffee'
 animationend = require './util/animationend-property'
@@ -19,7 +20,6 @@ $el.btfpTitle = $('.btfp-title', $el.btfp)
 $el.btfpText = $('.btfp-text', $el.btfp)
 $el.btfpCancel = $('.btfp-cancel', $el.btfp)
 $el.btfpConfirm = $('.btfp-confirm', $el.btfp)
-
 
 beautifulPop = ->
 
