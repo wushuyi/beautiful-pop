@@ -33,25 +33,36 @@
 	<link rel="stylesheet" href="assets/css/style.css" />
 	<!-- modernizr 用于处理 各浏览器 兼容 因为要 处理css样式兼容 所以 头部加载 -->
 	<script src="assets/libs/modernizr/2.8.3/modernizr.js"></script>
+
 </head>
 
 <body>
+<style>
+	#test{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-left: -55px;
+		margin-top: -40px;
+		background-color: #AEDEF4;
+		color: white;
+		border: none;
+		box-shadow: none;
+		font-size: 34px;
+		font-weight: 500;
+		-webkit-border-radius: 4px;
+		border-radius: 5px;
+		padding: 20px 62px;
+		cursor: pointer;
+	}
+</style>
 <!-- 为何要用这个 div? 请看http://camendesign.com/code/developpeurs_sans_frontieres -->
 <div class="wrapper">
-	<button id="test" style="  background-color: #AEDEF4;
-  color: white;
-  border: none;
-  box-shadow: none;
-  font-size: 17px;
-  font-weight: 500;
-  -webkit-border-radius: 4px;
-  border-radius: 5px;
-  padding: 10px 32px;
-  margin: 120px;
-  cursor: pointer;">点击我!</button>
+	<button id="test" class="btfp-button">点击我!</button>
 </div>
 <!-- js 紧贴</body> 页面渲染完成 后处理 js 有助于 加快 页面响应速度 -->
 <script src='assets/libs/jquery/2.1.4/jquery.js'></script>
+<script src="assets/libs/jquery-touch/1.0.0/jquery-touch.js"></script>
 <script src="../dist/bundle.js"></script>
 <script src="assets/js/functions.js"></script>
 </body>
